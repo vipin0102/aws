@@ -1,0 +1,17 @@
+namespace: internal
+
+imagePullSecret: gitlab-registry-secret
+
+image:
+  repository: registry.gitlab.artivatic.ai/devops/dockerhub-images/aws-cost-dashboard
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  host: dev.internal.artivatic.ai
+  path: /aws-cost

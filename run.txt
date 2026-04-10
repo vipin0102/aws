@@ -1,0 +1,7 @@
+helm upgrade --install aws-cost-dashboard ./helm -n internal
+
+
+helm uninstall aws-cost-dashboard -n internal
+
+
+kubectl rollout restart deployment aws-cost-dashboard -n internal
